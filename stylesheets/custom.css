@@ -12,6 +12,7 @@ body {
 body p {
   color: white;
   font-size: 1em;
+  line-height: 1.8em;
 }
 
 a {
@@ -39,6 +40,7 @@ img {
     justify-content: center;
     color: white;
     font-weight: normal;
+    text-align: center;
 }
 
 /*Header*/
@@ -46,12 +48,16 @@ img {
 header.main-header {
   height: 50%;
   margin-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 header.main-header h1 {
-    height: 3em; 
     font-size: 2.5em;
+    line-height: 1.2em;
+    height: 3em; 
     margin-top: 0;
+    text-align: center;
 }
 
 /*Main Content*/
@@ -60,6 +66,8 @@ section.main-content {
   margin-left: auto;
   margin-right: auto;
   max-width: 760px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 section.main-content section {
@@ -72,6 +80,7 @@ section.main-content section:first-child {
 
 section.main-content h2 {
     font-size: 2em;
+    color: #61FFFF;
 }
 
 section.main-content h3 {
@@ -122,20 +131,22 @@ img.qrcode {
   margin: 0 auto;
 }
 
+img#website-rqcode {
+  border-radius: 3px;
+  border: 5px solid white;
+  margin-left: -5px;
+  margin-right: -5px;
+  box-shadow: 1px 1px 5px #AFAFAF;
+}
+
 footer.main-footer {
   height: 800px;
   position: relative;
-  /*background-image: linear-gradient(rgba(14, 40, 89, 1) 0, rgba(255, 255, 255, 0)), url(http://7fvhf5.com1.z0.glb.clouddn.com/mountains-backgroud.jpeg?imageView/1/w/1440/h/800);*/
   background-image: linear-gradient(rgba(255, 255, 255, 0) 58%, #071525), url(https://daks2k3a4ib2z.cloudfront.net/561b940c607fbeba27c78ae6/5624c69d202d244654cd0d04_bg-mtrange3.jpg);
-}
-
-.footer-container {
-  
 }
 
 .footer-content {
   position: absolute;
-  /*top: 10%;*/
   bottom: 0;
   height: 15%;
   width: 100%;
