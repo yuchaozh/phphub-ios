@@ -71,7 +71,7 @@ section.main-content {
 }
 
 section.main-content section {
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 section.main-content section:first-child {
@@ -139,10 +139,31 @@ img#website-rqcode {
   box-shadow: 1px 1px 5px #AFAFAF;
 }
 
+/*Footer*/
+
 footer.main-footer {
   height: 800px;
   position: relative;
   background-image: linear-gradient(rgba(255, 255, 255, 0) 58%, #071525), url(https://daks2k3a4ib2z.cloudfront.net/561b940c607fbeba27c78ae6/5624c69d202d244654cd0d04_bg-mtrange3.jpg);
+}
+
+.who-made-this {
+  max-width: 760px;
+  margin: 0 auto;
+  padding:3% 15px 0 15px;
+}
+
+.who-made-this h2 {
+  font-size: 2em;
+  color: #656565;
+}
+
+.who-made-this a {
+  color: #229BC5;
+}
+
+.who-made-this p {
+  color: gray;
 }
 
 .footer-content {
