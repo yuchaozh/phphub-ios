@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/animate.css/3.4.0/animate.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
   </head>
   <body>
@@ -16,7 +17,7 @@
         <div class="separator"></div>
         <p class="slogon">PHPHub 是积极向上的 PHP & Laravel 开发者社区.</p>
         <a href="https://github.com/aufree">
-          <img src="http://7fvhf5.com1.z0.glb.clouddn.com/IMG_0639.JPG?imageView/1/w/200/h/200" alt="avatar" class="avatar">
+          <img class="avatar wow bounceInDown" data-wow-duration="1.5s" src="http://7fvhf5.com1.z0.glb.clouddn.com/IMG_0639.JPG?imageView/1/w/200/h/200" alt="avatar">
         </a>
       </header>
       <section class="main-content">
@@ -29,9 +30,9 @@
           <section class="screenshots">
             <h2>应用截图</h2>     
             <h3>iPhone</h3>
-            <img src="http://7fvhf5.com1.z0.glb.clouddn.com/phphub-iphone.png" alt="iphone">       
+            <img class="wow slideInLeft" data-wow-duration="1s" src="http://7fvhf5.com1.z0.glb.clouddn.com/phphub-iphone.png" alt="iphone">       
             <h3>iPad</h3>
-            <img src="http://7fvhf5.com1.z0.glb.clouddn.com/ipad.png?imageView/1/w/2000/h/1574" alt="ipad" style="margin-top:30px;">
+            <img  class="wow slideInRight" data-wow-duration="1s" src="http://7fvhf5.com1.z0.glb.clouddn.com/ipad.png?imageView/1/w/2000/h/1574" alt="ipad" style="margin-top:30px;">
           </section>
 
           <section class="installtion">
@@ -58,10 +59,10 @@
             <h2>怎样登录?</h2>
             <h3>测试环境</h3>
             <p class="p-center">打开 PHPHub iOS 应用, 点击进入 "我的页面" 使用 "扫码登录" 来扫描下方二维码完成登录.</p>
-            <img src="http://ww4.sinaimg.cn/large/76dc7f1bgw1eyi0esx6mnj21be18w43c.jpg" alt="QRCode" class="qrcode">
+            <img class="qrcode wow bounceIn" data-wow-duration="1s" src="http://ww4.sinaimg.cn/large/76dc7f1bgw1eyi0esx6mnj21be18w43c.jpg" alt="QRCode">
             <h3>生产环境</h3>
             <p>去 <a href="https://phphub.org/login">PHPHub 论坛</a> 使用你的 GitHub 账号进行登录, 完成之后进入个人资料页面, 扫描个人资料页面的客户端登录二维码完成登录, 如下图所示.</p>
-            <img id="website-rqcode" src="http://ww3.sinaimg.cn/large/76dc7f1bjw1eyi5ju8wcaj20sb0odwkj.jpg" alt="Website QRCode">
+            <img id="website-rqcode" class="wow bounceInUp" data-wow-duration="2s" src="http://ww3.sinaimg.cn/large/76dc7f1bjw1eyi5ju8wcaj20sb0odwkj.jpg" alt="Website QRCode">
           </section>
 
       </section>  
@@ -79,5 +80,9 @@
             </div>
           </div>
       </footer>
+
+      <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+      <script src="js/wow.min.js"></script>
+      <script src="js/main.js"></script>
   </body>
 </html>
