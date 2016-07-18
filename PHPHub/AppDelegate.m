@@ -48,11 +48,15 @@
 #pragma mark - Make window visible
 
 - (void)makeWindowVisible:(NSDictionary *)launchOptions {
+	// uiwindow: 任何一个应用都有且只有一个UIWindow对象。UIWindow对象就像一个容器，负责包含应用中的所有视图。
+	// 应用需要在启动时创建并设置UIWindow对象，然后为其添加其他视图。
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    
+	
+	// set navigation bar background color to white
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-    
+	
+	// set BaseTabBarViewController as the root view controller of the application
     if (_tabBarViewController == nil){
         _tabBarViewController = [[BaseTabBarViewController alloc] init];
     }

@@ -12,11 +12,13 @@
 #import "WiKiListViewController.h"
 
 @interface BaseTabBarViewController () {
+	// Four separate navigation controller for four tabs
     UINavigationController *_essentialNC;
     UINavigationController *_forumNC;
     UINavigationController *_wikiNC;
     UINavigationController *_meNC;
 }
+// create a timer to refresh unread counts
 @property (nonatomic) NSTimer *refreshUnreadCountTimer;
 @end
 
@@ -24,6 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	// init local notification
+	// name: UpdateNoticeCount
+	// function: updateNoticeCount
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateNoticeCount:) name:UpdateNoticeCount object:nil];
     
     self.delegate = self;
@@ -33,6 +39,9 @@
     [self createRefreshUnreadCountTimer];
 }
 
+/**
+ *  create refresh unread counts timer which runs every 30mins
+ */
 - (void)createRefreshUnreadCountTimer {
     if (!self.refreshUnreadCountTimer) {
         self.refreshUnreadCountTimer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(checkNoticeCount) userInfo:nil repeats:YES];
@@ -43,16 +52,25 @@
     [[CurrentUser Instance] checkNoticeCount];
 }
 
+/**
+ *  Get unread count from notification and update the badge of the tab
+ *
+ *  @param notification UpdateNoticeCount notification
+ */
 - (void)updateNoticeCount:(NSNotification *)notification {
     NSNumber *unreadCount = notification.userInfo[@"unreadCount"];
+	// if unreadCount > 0 update badgate value
     _meNC.tabBarItem.badgeValue = unreadCount.integerValue > 0 ? unreadCount.stringValue : nil;
 }
+
 
 - (void)setupTabBarItems {
     UIEdgeInsets insets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
 
     EssentialListViewController *essentialListVC = [[EssentialListViewController alloc] init];
+	// set navigation controller for Essential List tab
     _essentialNC = [[UINavigationController alloc] initWithRootViewController:essentialListVC];
+	// set unselected image and selected image for Essential List tab
     _essentialNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"essential_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage imageNamed:@"essential_selected_icon.png"]];
     _essentialNC.tabBarItem.imageInsets = insets;
     
@@ -70,7 +88,8 @@
     _meNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"me_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage imageNamed:@"me_selected_icon.png"]];
     _meNC.tabBarItem.badgeValue = nil;
     _meNC.tabBarItem.imageInsets = insets;
-    
+	
+	// TODO: ???
     NSArray *controllers = @[_essentialNC, _forumNC, _wikiNC, _meNC];
     [self setViewControllers:controllers];
     
